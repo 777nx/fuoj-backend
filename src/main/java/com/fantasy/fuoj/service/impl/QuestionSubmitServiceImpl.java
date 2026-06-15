@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fantasy.fuoj.common.ErrorCode;
 import com.fantasy.fuoj.constant.CommonConstant;
 import com.fantasy.fuoj.exception.BusinessException;
+import com.fantasy.fuoj.judge.JudgeService;
 import com.fantasy.fuoj.model.dto.questionsubmit.QuestionSubmitAddRequest;
 import com.fantasy.fuoj.model.dto.questionsubmit.QuestionSubmitQueryRequest;
 import com.fantasy.fuoj.model.entity.Question;
@@ -22,10 +23,12 @@ import com.fantasy.fuoj.service.UserService;
 import com.fantasy.fuoj.utils.SqlUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 /**
@@ -42,6 +45,10 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
 
     @Resource
     private UserService userService;
+
+    @Resource
+    @Lazy
+    private JudgeService judgeService;
 
     /**
      * 题目提交
@@ -79,6 +86,11 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
         if (!save) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "数据插入失败");
         }
+        Long questionSubmitId = questionSubmit.getId();
+        // 执行判题服务
+        CompletableFuture.runAsync(() -> {
+            judgeService.doJudge(questionSubmitId);
+        });
         return questionSubmit.getId();
     }
 
