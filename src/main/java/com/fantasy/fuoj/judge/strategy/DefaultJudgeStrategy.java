@@ -3,7 +3,7 @@ package com.fantasy.fuoj.judge.strategy;
 import cn.hutool.json.JSONUtil;
 import com.fantasy.fuoj.model.dto.question.JudgeCase;
 import com.fantasy.fuoj.model.dto.question.JudgeConfig;
-import com.fantasy.fuoj.model.dto.questionsubmit.JudgeInfo;
+import com.fantasy.fuoj.judge.codesandbox.model.JudgeInfo;
 import com.fantasy.fuoj.model.entity.Question;
 import com.fantasy.fuoj.model.enums.JudgeInfoMessageEnum;
 

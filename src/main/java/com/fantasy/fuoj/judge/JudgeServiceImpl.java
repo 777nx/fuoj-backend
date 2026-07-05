@@ -10,7 +10,7 @@ import com.fantasy.fuoj.judge.codesandbox.model.ExecuteCodeRequest;
 import com.fantasy.fuoj.judge.codesandbox.model.ExecuteCodeResponse;
 import com.fantasy.fuoj.judge.strategy.JudgeContext;
 import com.fantasy.fuoj.model.dto.question.JudgeCase;
-import com.fantasy.fuoj.model.dto.questionsubmit.JudgeInfo;
+import com.fantasy.fuoj.judge.codesandbox.model.JudgeInfo;
 import com.fantasy.fuoj.model.entity.Question;
 import com.fantasy.fuoj.model.entity.QuestionSubmit;
 import com.fantasy.fuoj.model.enums.QuestionSubmitStatusEnum;

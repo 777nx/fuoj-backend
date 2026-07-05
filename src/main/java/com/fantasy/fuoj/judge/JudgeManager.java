@@ -4,7 +4,7 @@ import com.fantasy.fuoj.judge.strategy.DefaultJudgeStrategy;
 import com.fantasy.fuoj.judge.strategy.JavaLanguageJudgeStrategy;
 import com.fantasy.fuoj.judge.strategy.JudgeContext;
 import com.fantasy.fuoj.judge.strategy.JudgeStrategy;
-import com.fantasy.fuoj.model.dto.questionsubmit.JudgeInfo;
+import com.fantasy.fuoj.judge.codesandbox.model.JudgeInfo;
 import com.fantasy.fuoj.model.entity.QuestionSubmit;
 import org.springframework.stereotype.Service;
 

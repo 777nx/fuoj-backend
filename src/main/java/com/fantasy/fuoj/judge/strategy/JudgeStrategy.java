@@ -1,6 +1,6 @@
 package com.fantasy.fuoj.judge.strategy;
 
-import com.fantasy.fuoj.model.dto.questionsubmit.JudgeInfo;
+import com.fantasy.fuoj.judge.codesandbox.model.JudgeInfo;
 
 /**
  * 判题策略

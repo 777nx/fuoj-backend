@@ -1,7 +1,7 @@
 package com.fantasy.fuoj.model.vo;
 
 import cn.hutool.json.JSONUtil;
-import com.fantasy.fuoj.model.dto.questionsubmit.JudgeInfo;
+import com.fantasy.fuoj.judge.codesandbox.model.JudgeInfo;
 import com.fantasy.fuoj.model.entity.QuestionSubmit;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
